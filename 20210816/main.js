@@ -73,11 +73,11 @@ document.querySelector('.rand-pwd-gen').addEventListener('click', onClickGenerat
 //=================================================
 //================= TASK_3 ========================
  const shuffle = (array) => {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
   
     while (0 !== currentIndex) {
   
-      randomIndex = Math.floor(Math.random() * currentIndex);
+      const randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
   
       temporaryValue = array[currentIndex];
