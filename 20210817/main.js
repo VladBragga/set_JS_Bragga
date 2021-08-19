@@ -31,20 +31,20 @@ convertToRoman = (num) => {
 //======== TASK 2 =========
 const converterTemperature = (valNum, first, second) => {
  //check correct input   
-    if(first != 'c' && first != 'k' && first != 'f') {
+    if(first !== 'c' && first !== 'k' && first !== 'f') {
      return console.log('Invalid data');
     }
-    if(second != 'c' && second != 'k' && second != 'f') {
+    if(second !== 'c' && second !== 'k' && second !== 'f') {
         return console.log('Invalid data');
        }
 //result
-    if(first == 'f'){
-        return second == 'c' ? (valNum-32)/1.8 : ((valNum-32)/1.8)+273.15; 
+    if(first === 'f'){
+        return second === 'c' ? (valNum-32)/1.8 : ((valNum-32)/1.8)+273.15; 
     }
-    if(first == 'c'){
-        return second == 'f' ? (valNum*1.8)+32 : valNum+273.15;
+    if(first === 'c'){
+        return second === 'f' ? (valNum*1.8)+32 : valNum+273.15;
     }
-    if(first == 'k'){
-        return second == 'f' ? ((valNum-273.15)*1.8)+32 : valNum-273.15;
+    if(first === 'k'){
+        return second === 'f' ? ((valNum-273.15)*1.8)+32 : valNum-273.15;
     }
 }
