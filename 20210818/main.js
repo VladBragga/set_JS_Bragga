@@ -104,6 +104,6 @@ const ShortestDistance = (array) => {
         }
         flag++;
     }
-    console.log('Shortest way - '+letter[firstPoint],letter[secondPoint], array[firstPoint-1], array[secondPoint-1]);
-
+    console.log('Smallest distance beetwen - '+letter[firstPoint],letter[secondPoint]);
+    console.log(array[firstPoint-1], array[secondPoint-1], ' or ', array[secondPoint-1], array[firstPoint-1]);
 }
