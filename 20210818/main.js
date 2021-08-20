@@ -88,13 +88,13 @@ const ShortestDistance = (array) => {
         minDistance = [];
 
    let flag = 0, x = 0, firstPoint, secondPoint;
-   minDistanceValue = Math.abs(position[0][0] - position[1][0]) + Math.abs(position[0][1] - position[1][1]);
-  
+   minDistanceValue = Math.sqrt((Math.pow(position[0][0] - position[1][0]), 2) + Math.pow((position[0][1] - position[1][1]), 2));
+  console.log(minDistance);
     while(flag !== positionLen-1){
      for(let i = flag; i < positionLen-1; i++){
-            MasMinus1[x] = Math.abs(position[flag][0] - position[i+1][0]);
-            MasMinus2[x] = Math.abs(position[flag][1] - position[i+1][1]);
-            minDistance[x] = MasMinus1[x] + MasMinus2[x];  
+            MasMinus1[x] = Math.pow(position[flag][0] - position[i+1][0], 2);
+            MasMinus2[x] = Math.pow(position[flag][1] - position[i+1][1], 2);
+            minDistance[x] = Math.sqrt(MasMinus1[x] + MasMinus2[x]);  
             if(minDistanceValue > minDistance[x]){
                 firstPoint = flag+1;
                 secondPoint = i+2;
@@ -105,5 +105,5 @@ const ShortestDistance = (array) => {
         flag++;
     }
     console.log('Smallest distance beetwen - '+letter[firstPoint],letter[secondPoint]);
-    console.log(array[firstPoint-1], array[secondPoint-1], ' or ', array[secondPoint-1], array[firstPoint-1]);
+    console.log(`[${array[firstPoint-1]}], [${array[secondPoint-1]}]`, 'or', `[${array[secondPoint-1]}], [${array[firstPoint-1]}]`);
 }
