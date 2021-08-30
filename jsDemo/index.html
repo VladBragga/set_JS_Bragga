@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo_2</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    
+    <script src="main.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+    <h1>Tasks 1-7</h1>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action list-group-item-success active" id="list-task1-list" data-toggle="list" href="#list-task1" role="tab" aria-controls="task1">1. Chess</a>
+                <a class="list-group-item list-group-item-action list-group-item-success" id="list-task2-list" data-toggle="list" href="#list-task2" role="tab" aria-controls="task2">2. Envelopes</a>
+                <a class="list-group-item list-group-item-action list-group-item-success" id="list-task3-list" data-toggle="list" href="#list-task3" role="tab" aria-controls="task3">3. Triangles</a>
+                <a class="list-group-item list-group-item-action list-group-item-success" id="list-task4-list" data-toggle="list" href="#list-task4" role="tab" aria-controls="task4">4. Polyndrom</a>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="tab-content" id="nav-tabContent">
+                <!--Page of task №1-->
+                <div class="tab-pane fade show active" id="list-task1" role="tabpanel" aria-labelledby="list-task1-list">
+                    <div>
+                        <h3>Шахматная доска</h3>
+                        <p>Вывести шахматную доску с заданными размерами высоты и ширины</p>
+                        <p>Входные параметры: длина, ширина, символ для отображения</p>
+                        <p>Выход: строка с представлением шахматной доски</p>
+                    </div>
+
+                    <form class="form-inline d-flex" name="form1">
+                        <div class="form-group mx-sm-3 mb-2 d-flex">
+                            <input type="text" class="form-control" placeholder="length">
+                            <input type="text" class="form-control" placeholder="width">
+                            <input type="text" class="form-control" placeholder="symbol">
+                        </div>
+                        <button type="button" class="btn btn-success chess-btn mb-2">Drow</button>
+                    </form>
+                    
+                    <div class="result"></div>
+                </div>
+                 <!--Page of task №2-->
+                 <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-task2-list">
+                    <div>
+                        <h3>Анализ конвертов</h3>
+                        <p>Есть два конверта со сторонами (a,b) и (c,d). Требуется определить, можно ли один конверт вложить в другой. Программа должна обрабатывать ввод чисел с плавающей точкой</p>
+                        <p>Входные параметры: объекты конверт1 и конверт2</p>
+                        <p>Выход: номер конверта, если вложение возможно, 0 – если вложение невозможно</p>
+                    </div>
+
+                    <form class="form-inline d-flex" name="form2">
+                        <div class="form-group mx-sm-3 mb-2  d-flex">
+                            <p>Envelope 1:</p>
+                            <input type="text" class="form-control" placeholder="width">
+                            <input type="text" class="form-control" placeholder="height">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2  d-flex">
+                            <p>Envelope 2:</p>
+                            <input type="text" class="form-control" placeholder="width">
+                            <input type="text" class="form-control" placeholder="height">
+                        </div>
+                        <button type="button" class="btn btn-success envelop-btn mb-2">Check</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <!--Page of task №3-->
+                <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-task3-list">
+                    <div>
+                        <h3>Сортировка треугольников</h3>
+                        <p>Вывести треугольники в порядке убывания их площади</p>
+                        <p>Входные параметры: массив объектов треугольник</p>
+                        <p>Выход: упорядоченный массив имён треугольников</p>
+                        <h5>Примечание:</h5>
+                        <ul>
+                            <li>Расчёт площади треугольника должен производится по формуле Герона</li>
+                            <li>Каждый треугольник определяется именами вершин и длинами его сторон</li>
+                            <li>Приложение должно обрабатывать ввод чисел с плавающей точкой</li>
+                        </ul>
+                    </div>
+
+                    <form class="form-inline" name="form3">
+                        <div id = "triangles">
+                            <div class="triangle d-flex">
+                                <span>Triangle 1: </span><!--\
+                                --><input type="text" class="form-control" placeholder="Name"><!--   
+                                --><input type="text" class="form-control" placeholder="side 1"><!--
+                                --><input type="text" class="form-control" placeholder="side 2"><!--
+                                --><input type="text" class="form-control" placeholder="side 3">
+                            </div>
+                            <div class="triangle d-flex">
+                                <span>Triangle 2: </span><!--
+                                --><input type="text" class="form-control" placeholder="Name"><!--    
+                                --><input type="text" class="form-control" placeholder="side 1"><!--
+                                --><input type="text" class="form-control" placeholder="side 2"><!--
+                                --><input type="text" class="form-control" placeholder="side 3">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-success triangle-add-btn btn-bottom mb-2">Add</button>
+                        <button type="button" class="btn btn-warning triangle-btn btn-bottom mb-2">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                 <!--Page of task №4-->
+                 <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-task4-list">
+                    <div>
+                        <h3>Палиндром</h3>
+                        <p>Проверить является ли число или его часть палиндромом. Например, число 1234437 не является палиндромом, но является палиндромом его часть 3443. Числа меньшие, чем 10 палиндромом не считать</p>
+                        <p>Входные параметры: число</p>
+                        <p>Выход: извлечённый из числа палиндром либо 0, если извлечение не удалось</p>
+                    </div>
+
+                    <form class="form-inline d-flex" name="form4">
+                        <div class="form-group mx-sm-4 mb-2">
+                            <input type="text" class="form-control" placeholder="Number">
+                        </div>
+                        <button type="button" class="btn btn-success polynom-btn mb-2">Calculate</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
